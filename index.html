@@ -136,8 +136,9 @@
         .logo-img {
             height: 48px;
             width: auto;
-            border-radius: 12px;
             transition: var(--transition);
+            background: transparent;
+            padding: 5px;
         }
 
         .logo:hover .logo-img {
@@ -2045,6 +2046,405 @@
             color: white;
         }
 
+        /* ===== NEW FEATURES STYLES ===== */
+
+        /* Solutions Finder Styles */
+        .solutions-finder {
+            background: rgba(5, 5, 16, 0.5);
+            position: relative;
+        }
+
+        .finder-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .finder-step {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .finder-step.active {
+            display: block;
+        }
+
+        .finder-question {
+            margin-bottom: 2rem;
+        }
+
+        .finder-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .finder-option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            padding: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .finder-option:hover {
+            background: rgba(0, 102, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .finder-option.selected {
+            background: rgba(0, 102, 255, 0.2);
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.2);
+        }
+
+        .finder-option i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .finder-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .finder-progress {
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .finder-progress-bar {
+            height: 100%;
+            background: var(--gradient);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .finder-result {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .recommended-service {
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--primary);
+        }
+
+        .service-match-score {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        /* Legal Pages Styles */
+        .legal-section {
+            background: rgba(5, 5, 16, 0.5);
+        }
+
+        .legal-content {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .legal-content h3 {
+            color: var(--accent);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content ul {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-content li {
+            margin-bottom: 0.5rem;
+            color: var(--gray);
+        }
+
+        .legal-toc {
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .legal-toc ul {
+            columns: 2;
+        }
+
+        /* FAQ Section Styles */
+        .faq-section {
+            background: rgba(5, 5, 16, 0.5);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .faq-question h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+
+        /* Microsites Section Styles */
+        .microsites-section {
+            background: rgba(5, 5, 16, 0.5);
+        }
+
+        .microsites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .microsite-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .microsite-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: rgba(0, 102, 255, 0.2);
+        }
+
+        .microsite-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .microsite-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .microsite-card:hover .microsite-image img {
+            transform: scale(1.05);
+        }
+
+        .microsite-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .microsite-content h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .microsite-category {
+            background: var(--secondary);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .microsite-content p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .microsite-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: auto;
+        }
+
+        /* Support Section Styles */
+        .support-section {
+            background: rgba(5, 5, 16, 0.5);
+        }
+
+        .support-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .support-option {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--card-border);
+            transition: var(--transition);
+        }
+
+        .support-option:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .support-option i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .support-option h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Admin Microsites Tab */
+        .microsites-admin-section {
+            margin-top: 1rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid var(--card-border);
+            height: 100%;
+            overflow-y: auto;
+        }
+
+        .microsites-admin-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .microsites-admin-form .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .microsites-preview {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(10, 10, 24, 0.6);
+            border-radius: 15px;
+            border: 1px solid var(--card-border);
+        }
+
+        .microsite-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .microsite-preview-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid var(--card-border);
+        }
+
+        .microsite-preview-card h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .microsite-preview-card .meta {
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .microsite-preview-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-20px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(20px); opacity: 0; }
+        }
+
         /* Responsive Styles */
         @media (max-width: 1200px) {
             .container {
@@ -2087,6 +2487,14 @@
 
             .freezer-config-section {
                 padding: 1.5rem;
+            }
+
+            .finder-options {
+                grid-template-columns: 1fr;
+            }
+
+            .legal-toc ul {
+                columns: 1;
             }
         }
 
@@ -2164,6 +2572,14 @@
             .footer-bottom {
                 text-align: center;
             }
+
+            .finder-container {
+                padding: 2rem;
+            }
+
+            .legal-content {
+                padding: 2rem;
+            }
         }
 
         @media (max-width: 576px) {
@@ -2217,6 +2633,15 @@
                 font-size: 0.9rem;
                 padding: 0.4rem 1rem;
             }
+
+            .microsites-admin-form {
+                grid-template-columns: 1fr;
+            }
+
+            .finder-nav .btn {
+                padding: 0.8rem 1.2rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -2225,7 +2650,7 @@
     <header id="header">
         <div class="container header-container">
             <div class="logo" id="homeLink">
-                <img src="https://i.ibb.co/ynLR0cDZ/Fleek-tech-official-2nd-logo.png" alt="Fleek Tech Logo" class="logo-img">
+                <img src="https://i.ibb.co/ZR3tHV4g/Official-Favcon-Photo-for-Fleek-Tech-1.png" alt="Fleek Tech Logo" class="logo-img">
                 <span class="logo-text">FleekTech</span>
             </div>
             
@@ -2233,10 +2658,12 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#solutions-finder">Solutions Finder</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#team">Team</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#microsites">Microsites</a></li>
+                    <li><a href="#support">Support</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -2273,8 +2700,8 @@
                 <a href="#services" class="btn btn-primary">
                     <i class="fas fa-rocket"></i> Explore Services
                 </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fas fa-calendar"></i> Schedule Consultation
+                <a href="#solutions-finder" class="btn btn-secondary">
+                    <i class="fas fa-search"></i> Find Your Solution
                 </a>
                 <a href="#testimonials" class="btn btn-tertiary">
                     View Testimonials <i class="fas fa-arrow-right"></i>
@@ -2297,6 +2724,189 @@
                 <div class="stat-item">
                     <h3>50+</h3>
                     <p>Experts Team</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Finder Section -->
+    <section class="solutions-finder" id="solutions-finder">
+        <div class="container">
+            <div class="section-title">
+                <h2>Find Your Perfect Solution</h2>
+                <p>Answer a few questions and we'll recommend the best service for your needs</p>
+            </div>
+            
+            <div class="finder-container">
+                <div class="finder-progress">
+                    <div class="finder-progress-bar" id="finderProgress"></div>
+                </div>
+                
+                <div class="finder-step active" id="step1">
+                    <div class="finder-question">
+                        <h3>What is your primary business goal?</h3>
+                        <p>Select the option that best describes what you want to achieve</p>
+                    </div>
+                    
+                    <div class="finder-options">
+                        <div class="finder-option" data-value="online-presence">
+                            <i class="fas fa-globe"></i>
+                            <h4>Build Online Presence</h4>
+                            <p>Create a website or improve existing digital presence</p>
+                        </div>
+                        <div class="finder-option" data-value="mobile-app">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Develop Mobile App</h4>
+                            <p>Create iOS/Android app for business or customers</p>
+                        </div>
+                        <div class="finder-option" data-value="security">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Enhance Security</h4>
+                            <p>Protect business data and systems from threats</p>
+                        </div>
+                        <div class="finder-option" data-value="marketing">
+                            <i class="fas fa-bullhorn"></i>
+                            <h4>Boost Marketing</h4>
+                            <p>Improve brand visibility and customer acquisition</p>
+                        </div>
+                        <div class="finder-option" data-value="automation">
+                            <i class="fas fa-robot"></i>
+                            <h4>Automate Processes</h4>
+                            <p>Streamline operations with AI and automation</p>
+                        </div>
+                        <div class="finder-option" data-value="consultation">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Business Consultation</h4>
+                            <p>Get expert advice on digital transformation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="finder-nav">
+                        <button class="btn btn-secondary" disabled>Previous</button>
+                        <button class="btn btn-primary" id="nextStep1">Next</button>
+                    </div>
+                </div>
+                
+                <div class="finder-step" id="step2">
+                    <div class="finder-question">
+                        <h3>What is your budget range?</h3>
+                        <p>This helps us recommend the most suitable solution</p>
+                    </div>
+                    
+                    <div class="finder-options">
+                        <div class="finder-option" data-value="budget1">
+                            <i class="fas fa-coins"></i>
+                            <h4>KES 15,000 - 50,000</h4>
+                            <p>Starter projects and basic solutions</p>
+                        </div>
+                        <div class="finder-option" data-value="budget2">
+                            <i class="fas fa-wallet"></i>
+                            <h4>KES 50,000 - 150,000</h4>
+                            <p>Standard business solutions</p>
+                        </div>
+                        <div class="finder-option" data-value="budget3">
+                            <i class="fas fa-gem"></i>
+                            <h4>KES 150,000 - 500,000</h4>
+                            <p>Advanced enterprise solutions</p>
+                        </div>
+                        <div class="finder-option" data-value="budget4">
+                            <i class="fas fa-crown"></i>
+                            <h4>KES 500,000+</h4>
+                            <p>Custom enterprise-grade solutions</p>
+                        </div>
+                    </div>
+                    
+                    <div class="finder-nav">
+                        <button class="btn btn-secondary" id="prevStep2">Previous</button>
+                        <button class="btn btn-primary" id="nextStep2">Next</button>
+                    </div>
+                </div>
+                
+                <div class="finder-step" id="step3">
+                    <div class="finder-question">
+                        <h3>What is your timeline?</h3>
+                        <p>How soon do you need the solution implemented?</p>
+                    </div>
+                    
+                    <div class="finder-options">
+                        <div class="finder-option" data-value="urgent">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Urgent (1-2 weeks)</h4>
+                            <p>Need immediate implementation</p>
+                        </div>
+                        <div class="finder-option" data-value="fast">
+                            <i class="fas fa-running"></i>
+                            <h4>Fast (3-6 weeks)</h4>
+                            <p>Quick turnaround needed</p>
+                        </div>
+                        <div class="finder-option" data-value="standard">
+                            <i class="fas fa-calendar-alt"></i>
+                            <h4>Standard (1-3 months)</h4>
+                            <p>Normal project timeline</p>
+                        </div>
+                        <div class="finder-option" data-value="flexible">
+                            <i class="fas fa-clock"></i>
+                            <h4>Flexible (3+ months)</h4>
+                            <p>Long-term development</p>
+                        </div>
+                    </div>
+                    
+                    <div class="finder-nav">
+                        <button class="btn btn-secondary" id="prevStep3">Previous</button>
+                        <button class="btn btn-primary" id="nextStep3">Get Recommendation</button>
+                    </div>
+                </div>
+                
+                <div class="finder-step" id="step4">
+                    <div class="finder-result">
+                        <h3>Your Recommended Solution</h3>
+                        <div class="service-match-score">92% Match</div>
+                        
+                        <div class="recommended-service">
+                            <h2 id="recommendedService">Web Design & Development</h2>
+                            <p id="serviceDescription">Based on your goals, budget, and timeline, we recommend this solution that aligns perfectly with your requirements.</p>
+                            
+                            <div class="service-details" id="serviceDetails">
+                                <div class="details-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0;">
+                                    <div>
+                                        <h4>Estimated Cost</h4>
+                                        <p id="estimatedCost">KES 35,000 - 75,000</p>
+                                    </div>
+                                    <div>
+                                        <h4>Timeline</h4>
+                                        <p id="estimatedTimeline">4-8 weeks</p>
+                                    </div>
+                                    <div>
+                                        <h4>Complexity</h4>
+                                        <p id="complexity">Medium</p>
+                                    </div>
+                                    <div>
+                                        <h4>Success Rate</h4>
+                                        <p id="successRate">95%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="service-features" id="serviceFeatures">
+                                <h4>Key Benefits:</h4>
+                                <ul>
+                                    <li>Customized to your business needs</li>
+                                    <li>Responsive design for all devices</li>
+                                    <li>SEO optimized for better visibility</li>
+                                    <li>Ongoing support and maintenance</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="finder-nav" style="justify-content: center;">
+                            <a href="#contact" class="btn btn-primary" style="margin-right: 1rem;">
+                                <i class="fas fa-calendar"></i> Schedule Consultation
+                            </a>
+                            <button class="btn btn-secondary" id="restartFinder">
+                                <i class="fas fa-redo"></i> Start Over
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2523,6 +3133,20 @@
         </div>
     </section>
 
+    <!-- Microsites Section -->
+    <section class="microsites-section" id="microsites">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Microsites</h2>
+                <p>Explore our specialized platforms and niche solutions</p>
+            </div>
+            
+            <div class="microsites-grid" id="micrositesGrid">
+                <!-- Microsites will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -2560,7 +3184,7 @@
         </div>
     </section>
 
-    <!-- NEW Blog Section -->
+    <!-- Blog Section -->
     <section class="blog-section" id="blog">
         <div class="container">
             <div class="section-title">
@@ -2573,6 +3197,296 @@
             </div>
         </div>
     </section>
+
+    <!-- Support & FAQ Section -->
+    <section class="support-section" id="support">
+        <div class="container">
+            <div class="section-title">
+                <h2>Support & FAQ</h2>
+                <p>Get help and find answers to common questions</p>
+            </div>
+            
+            <div class="support-options">
+                <div class="support-option">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>FAQ</h3>
+                    <p>Find answers to frequently asked questions about our services and processes.</p>
+                    <button class="btn btn-primary open-faq" style="margin-top: 1rem;">View FAQ</button>
+                </div>
+                
+                <div class="support-option">
+                    <i class="fas fa-file-contract"></i>
+                    <h3>Legal</h3>
+                    <p>Read our terms of service, privacy policy, and service level agreements.</p>
+                    <button class="btn btn-primary open-legal" style="margin-top: 1rem;">View Legal</button>
+                </div>
+                
+                <div class="support-option">
+                    <i class="fas fa-headset"></i>
+                    <h3>Live Support</h3>
+                    <p>Chat with our support team for immediate assistance with your questions.</p>
+                    <button class="btn btn-primary" id="openSupportChat" style="margin-top: 1rem;">Chat Now</button>
+                </div>
+                
+                <div class="support-option">
+                    <i class="fas fa-book"></i>
+                    <h3>Documentation</h3>
+                    <p>Access guides, tutorials, and documentation for our services.</p>
+                    <button class="btn btn-primary open-docs" style="margin-top: 1rem;">View Docs</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Modal -->
+    <div id="faq-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">×</button>
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-container" style="margin-top: 2rem;">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What services does Fleek Tech offer?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Fleek Tech offers a comprehensive range of technology services including web development, mobile app development, cybersecurity, digital marketing, cloud hosting, AI integration, business consultancy, graphic design, and specialized solutions like Zglobal-Connect for ISPs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How long does a typical project take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Project timelines vary based on complexity. Simple websites take 2-4 weeks, medium projects 1-3 months, and complex enterprise solutions 3-6 months. We provide detailed timelines during the consultation phase.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your pricing structure?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer flexible pricing: fixed-price projects, hourly rates (KES 2,500-5,000/hour), and monthly retainers. Use our Solutions Finder or Consultation Calculator for accurate estimates tailored to your needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you provide ongoing support?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer comprehensive support plans starting from KES 5,000/month covering maintenance, updates, security monitoring, and 24/7 technical assistance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is your development process?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our 5-step process includes: 1) Discovery & Planning, 2) Design & Prototyping, 3) Development, 4) Testing & Quality Assurance, 5) Deployment & Maintenance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you work with international clients?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we serve clients globally with remote collaboration tools and flexible time zone arrangements. We accept payments in multiple currencies.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What technologies do you use?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We use modern technologies including React, Vue.js, Node.js, Python, PHP, WordPress, Flutter, React Native, AWS, Google Cloud, and various AI/ML frameworks.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I get started?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply schedule a free consultation using our contact form, use the Solutions Finder, or contact us directly at +254 758 175 057.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Modal -->
+    <div id="legal-modal" class="modal">
+        <div class="modal-content legal-content">
+            <button class="close-modal">×</button>
+            <h2>Legal Documents</h2>
+            
+            <div class="legal-toc">
+                <h3>Table of Contents</h3>
+                <ul>
+                    <li><a href="#privacy-policy" class="legal-link">Privacy Policy</a></li>
+                    <li><a href="#terms-of-service" class="legal-link">Terms of Service</a></li>
+                    <li><a href="#service-level-agreement" class="legal-link">Service Level Agreement (SLA)</a></li>
+                    <li><a href="#cookies-policy" class="legal-link">Cookies Policy</a></li>
+                    <li><a href="#data-processing-agreement" class="legal-link">Data Processing Agreement</a></li>
+                </ul>
+            </div>
+            
+            <div id="privacy-policy">
+                <h3>Privacy Policy</h3>
+                <p><strong>Last Updated: January 2025</strong></p>
+                
+                <h4>1. Information We Collect</h4>
+                <p>We collect information you provide directly to us, including:</p>
+                <ul>
+                    <li>Contact information (name, email, phone number)</li>
+                    <li>Company information</li>
+                    <li>Project requirements and specifications</li>
+                    <li>Payment information</li>
+                    <li>Communications with our team</li>
+                </ul>
+                
+                <h4>2. How We Use Your Information</h4>
+                <p>We use the information we collect to:</p>
+                <ul>
+                    <li>Provide and improve our services</li>
+                    <li>Communicate with you about projects</li>
+                    <li>Process payments</li>
+                    <li>Send updates and marketing communications (with consent)</li>
+                    <li>Comply with legal obligations</li>
+                </ul>
+                
+                <h4>3. Data Security</h4>
+                <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction.</p>
+                
+                <h4>4. Your Rights</h4>
+                <p>You have the right to:</p>
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Correct inaccurate data</li>
+                    <li>Request deletion of your data</li>
+                    <li>Object to data processing</li>
+                    <li>Data portability</li>
+                </ul>
+                
+                <h4>5. Contact Information</h4>
+                <p>For privacy-related inquiries, contact: Fleektechinc@gmail.com</p>
+            </div>
+            
+            <div id="terms-of-service" style="margin-top: 3rem;">
+                <h3>Terms of Service</h3>
+                <p><strong>Effective Date: January 2025</strong></p>
+                
+                <h4>1. Acceptance of Terms</h4>
+                <p>By using Fleek Tech services, you agree to these Terms of Service. If you disagree, do not use our services.</p>
+                
+                <h4>2. Services Description</h4>
+                <p>Fleek Tech provides technology services including web development, mobile app development, cybersecurity, digital marketing, and related services as described on our website.</p>
+                
+                <h4>3. Payment Terms</h4>
+                <p>Payment terms are specified in individual proposals. Generally:</p>
+                <ul>
+                    <li>50% deposit upon project commencement</li>
+                    <li>25% upon milestone completion</li>
+                    <li>25% upon project delivery</li>
+                </ul>
+                
+                <h4>4. Intellectual Property</h4>
+                <p>Upon full payment, clients receive ownership of the delivered work. Fleek Tech retains rights to portfolio display and reusable code components.</p>
+                
+                <h4>5. Limitation of Liability</h4>
+                <p>Fleek Tech's liability is limited to the total project fee. We are not liable for indirect, incidental, or consequential damages.</p>
+                
+                <h4>6. Termination</h4>
+                <p>Either party may terminate services with written notice. Termination fees may apply based on work completed.</p>
+            </div>
+            
+            <div id="service-level-agreement" style="margin-top: 3rem;">
+                <h3>Service Level Agreement (SLA)</h3>
+                <p><strong>For Support & Maintenance Services</strong></p>
+                
+                <h4>1. Service Availability</h4>
+                <ul>
+                    <li><strong>Basic Plan:</strong> 99% uptime guarantee</li>
+                    <li><strong>Pro Plan:</strong> 99.5% uptime guarantee</li>
+                    <li><strong>Enterprise Plan:</strong> 99.9% uptime guarantee</li>
+                </ul>
+                
+                <h4>2. Response Times</h4>
+                <ul>
+                    <li><strong>Critical Issues:</strong> 1 hour response, 4 hour resolution</li>
+                    <li><strong>High Priority:</strong> 2 hour response, 8 hour resolution</li>
+                    <li><strong>Medium Priority:</strong> 4 hour response, 24 hour resolution</li>
+                    <li><strong>Low Priority:</strong> 8 hour response, 48 hour resolution</li>
+                </ul>
+                
+                <h4>3. Maintenance Windows</h4>
+                <p>Scheduled maintenance occurs Sundays 2:00 AM - 6:00 AM EAT with 48-hour advance notice.</p>
+                
+                <h4>4. Service Credits</h4>
+                <p>If uptime falls below guarantee, clients receive service credits as follows:</p>
+                <ul>
+                    <li>98-99%: 10% monthly credit</li>
+                    <li>95-98%: 25% monthly credit</li>
+                    <li>Below 95%: 50% monthly credit</li>
+                </ul>
+                
+                <h4>5. Exclusions</h4>
+                <p>SLA excludes downtime due to: client-side issues, third-party services, force majeure events, scheduled maintenance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Documentation Modal -->
+    <div id="docs-modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">×</button>
+            <h2>Documentation & Guides</h2>
+            
+            <div class="pricing-grid" style="margin-top: 2rem;">
+                <div class="pricing-card">
+                    <h4>Getting Started Guide</h4>
+                    <i class="fas fa-play-circle" style="font-size: 3rem; color: var(--primary); margin: 1rem 0;"></i>
+                    <p>Complete guide to starting your project with Fleek Tech</p>
+                    <a href="#" class="btn btn-primary">Download PDF</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h4>API Documentation</h4>
+                    <i class="fas fa-code" style="font-size: 3rem; color: var(--primary); margin: 1rem 0;"></i>
+                    <p>Comprehensive API reference for developers</p>
+                    <a href="#" class="btn btn-primary">View Docs</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h4>Video Tutorials</h4>
+                    <i class="fas fa-video" style="font-size: 3rem; color: var(--primary); margin: 1rem 0;"></i>
+                    <p>Step-by-step video guides for common tasks</p>
+                    <a href="#" class="btn btn-primary">Watch Now</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <h4>Best Practices</h4>
+                    <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--primary); margin: 1rem 0;"></i>
+                    <p>Industry best practices and guidelines</p>
+                    <a href="#" class="btn btn-primary">Read Guide</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Consultation Form Section with Updated Calculator -->
     <section id="contact" class="consultation">
@@ -2715,6 +3629,15 @@
                         </select>
                     </div>
                     
+                    <div class="form-group">
+                        <div class="form-check" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" id="agreeTerms" required style="width: auto;">
+                            <label for="agreeTerms" style="margin: 0; font-size: 0.9rem;">
+                                I agree to the <a href="#" class="open-legal" style="color: var(--accent);">Terms of Service</a> and <a href="#" class="open-legal" style="color: var(--accent);">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+                    
                     <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
                         <i class="fas fa-paper-plane"></i> Submit Request
                     </button>
@@ -2756,6 +3679,7 @@
                             <div>
                                 <strong>Working Hours</strong>
                                 <p>Mon-Fri: 8AM - 6PM</p>
+                                <p>Sat: 9AM - 1PM</p>
                             </div>
                         </li>
                     </ul>
@@ -2996,27 +3920,23 @@
                     <ul class="footer-links">
                         <li><a href="#home">Home</a></li>
                         <li><a href="#services">Services</a></li>
+                        <li><a href="#solutions-finder">Solutions Finder</a></li>
                         <li><a href="#about">About Us</a></li>
                         <li><a href="#blog">Blog</a></li>
-                        <li><a href="#team">Team</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#microsites">Microsites</a></li>
+                        <li><a href="#support">Support</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h3>Our Services</h3>
+                    <h3>Legal</h3>
                     <ul class="footer-links">
-                        <li><a href="#" class="service-link" data-service="webdev">Web Development</a></li>
-                        <li><a href="#" class="service-link" data-service="mobile">Mobile App Development</a></li>
-                        <li><a href="#" class="service-link" data-service="hosting">Hosting Services</a></li>
-                        <li><a href="#" class="service-link" data-service="cybersecurity">Cybersecurity</a></li>
-                        <li><a href="#" class="service-link" data-service="digital-marketing">Digital Marketing</a></li>
-                        <li><a href="#" class="service-link" data-service="business-solutions">Business Solutions</a></li>
-                        <li><a href="#" class="service-link" data-service="graphic-design">Graphic Design</a></li>
-                        <li><a href="#" class="service-link" data-service="ai">AI & Data Integration</a></li>
-                        <li><a href="#" class="service-link" data-service="support-maintenance">Support & Maintenance</a></li>
-                        <li><a href="#" class="service-link" data-service="zglobal">Zglobal-Connect</a></li>
+                        <li><a href="#" class="open-legal" data-section="privacy-policy">Privacy Policy</a></li>
+                        <li><a href="#" class="open-legal" data-section="terms-of-service">Terms of Service</a></li>
+                        <li><a href="#" class="open-legal" data-section="service-level-agreement">Service Level Agreement</a></li>
+                        <li><a href="#" class="open-faq">FAQ</a></li>
+                        <li><a href="#" class="open-docs">Documentation</a></li>
                     </ul>
                 </div>
                 
@@ -3137,6 +4057,7 @@
                 <div class="admin-tab" data-tab="chats">Live Chats</div>
                 <div class="admin-tab" data-tab="freezer-config">Freezer Config</div>
                 <div class="admin-tab" data-tab="blog-admin">Blog Management</div>
+                <div class="admin-tab" data-tab="microsites-admin">Microsites Management</div>
                 <div class="admin-tab" data-tab="consultation-clients">Consultation Clients</div>
                 <div class="admin-tab" data-tab="analytics">Analytics</div>
             </div>
@@ -3310,6 +4231,60 @@
                 </div>
             </div>
             
+            <!-- Microsites Management Tab Content -->
+            <div class="admin-tab-content" id="microsites-admin-tab">
+                <div class="microsites-admin-section">
+                    <h3><i class="fas fa-sitemap"></i> Microsites Management</h3>
+                    <form id="micrositesAdminForm" class="microsites-admin-form">
+                        <div class="form-group">
+                            <label for="microsite-title">Title</label>
+                            <input type="text" id="microsite-title" class="form-control" placeholder="Enter microsite title" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="microsite-category">Category</label>
+                            <select id="microsite-category" class="form-control" required>
+                                <option value="">Select category</option>
+                                <option value="E-commerce">E-commerce</option>
+                                <option value="Education">Education</option>
+                                <option value="Healthcare">Healthcare</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Entertainment">Entertainment</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Business">Business</option>
+                                <option value="Portfolio">Portfolio</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="microsite-image">Image URL</label>
+                            <input type="text" id="microsite-image" class="form-control" placeholder="Enter image URL">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="microsite-url">Website URL</label>
+                            <input type="url" id="microsite-url" class="form-control" placeholder="https://example.com" required>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="microsite-description">Description</label>
+                            <textarea id="microsite-description" class="form-control" placeholder="Enter microsite description" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-plus-circle"></i> Add Microsite
+                        </button>
+                    </form>
+                    
+                    <div class="microsites-preview">
+                        <h3>Active Microsites</h3>
+                        <div class="microsite-preview-grid" id="micrositePreviewGrid">
+                            <!-- Microsites will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Consultation Clients Tab Content -->
             <div class="admin-tab-content" id="consultation-clients-tab">
                 <div class="consultation-clients">
@@ -3330,7 +4305,6 @@
                             <h4>Total Visitors</h4>
                             <div class="analytics-value" id="analyticsVisitors">0</div>
                             <div class="chart-container" id="visitorsChart">
-                                <!-- Chart would be implemented here -->
                                 <div style="display: flex; align-items: flex-end; height: 100%; gap: 5px;">
                                     <div style="width: 20%; height: 80%; background: var(--primary);"></div>
                                     <div style="width: 20%; height: 60%; background: var(--primary);"></div>
@@ -3367,9 +4341,9 @@
                         </div>
                         
                         <div class="analytics-card">
-                            <h4>Chatbot Usage</h4>
-                            <div class="analytics-value" id="analyticsChats">0</div>
-                            <div class="chart-container" id="chatsChart">
+                            <h4>Solutions Finder Usage</h4>
+                            <div class="analytics-value" id="analyticsFinder">0</div>
+                            <div class="chart-container" id="finderChart">
                                 <div style="display: flex; align-items: flex-end; height: 100%; gap: 5px;">
                                     <div style="width: 20%; height: 70%; background: #00ffcc;"></div>
                                     <div style="width: 20%; height: 85%; background: #00ffcc;"></div>
@@ -4352,6 +5326,106 @@
             }
         };
 
+        // Solutions Finder Logic
+        const solutionsData = {
+            'online-presence': {
+                service: 'webdev',
+                name: 'Web Design & Development',
+                description: 'Perfect for establishing your online presence with a professional website that represents your brand and converts visitors into customers.',
+                cost: 'KES 35,000 - 75,000',
+                timeline: '4-8 weeks',
+                complexity: 'Medium',
+                successRate: '95%',
+                features: [
+                    'Customized to your business needs',
+                    'Responsive design for all devices',
+                    'SEO optimized for better visibility',
+                    'Content management system',
+                    'Ongoing support and maintenance'
+                ]
+            },
+            'mobile-app': {
+                service: 'mobile',
+                name: 'Mobile App Development',
+                description: 'Ideal for businesses wanting to engage customers on-the-go with a native mobile application.',
+                cost: 'KES 100,000 - 250,000',
+                timeline: '8-12 weeks',
+                complexity: 'High',
+                successRate: '92%',
+                features: [
+                    'iOS and Android compatibility',
+                    'User-friendly interface',
+                    'Secure data handling',
+                    'App store submission',
+                    'Regular updates and support'
+                ]
+            },
+            'security': {
+                service: 'cybersecurity',
+                name: 'Cybersecurity Solutions',
+                description: 'Essential for protecting your digital assets and ensuring business continuity with robust security measures.',
+                cost: 'KES 40,000 - 80,000',
+                timeline: '2-4 weeks',
+                complexity: 'Medium',
+                successRate: '98%',
+                features: [
+                    'Comprehensive security audit',
+                    'Firewall and antivirus setup',
+                    '24/7 monitoring',
+                    'Data backup and recovery',
+                    'Employee security training'
+                ]
+            },
+            'marketing': {
+                service: 'digital-marketing',
+                name: 'Digital Marketing Strategy',
+                description: 'Maximize your online visibility and reach your target audience with data-driven marketing campaigns.',
+                cost: 'KES 25,000 - 50,000',
+                timeline: 'Ongoing',
+                complexity: 'Medium',
+                successRate: '90%',
+                features: [
+                    'Social media management',
+                    'Content marketing strategy',
+                    'SEO optimization',
+                    'Paid advertising campaigns',
+                    'Analytics and reporting'
+                ]
+            },
+            'automation': {
+                service: 'ai',
+                name: 'AI & Process Automation',
+                description: 'Streamline operations and gain insights with artificial intelligence and automation solutions.',
+                cost: 'KES 150,000 - 350,000',
+                timeline: '12-16 weeks',
+                complexity: 'High',
+                successRate: '88%',
+                features: [
+                    'Custom AI solutions',
+                    'Process automation',
+                    'Data analytics dashboards',
+                    'Predictive analytics',
+                    'Integration with existing systems'
+                ]
+            },
+            'consultation': {
+                service: 'business-solutions',
+                name: 'Business Technology Consultation',
+                description: 'Strategic guidance for digital transformation and technology adoption in your business.',
+                cost: 'KES 35,000 - 70,000',
+                timeline: '2-4 weeks',
+                complexity: 'Medium',
+                successRate: '96%',
+                features: [
+                    'Business technology assessment',
+                    'Digital transformation roadmap',
+                    'Vendor selection assistance',
+                    'Implementation planning',
+                    'Ongoing advisory support'
+                ]
+            }
+        };
+
         // Freezer AI Configuration
         let freezerConfig = {
             apiKey: localStorage.getItem('freezerApiKey') || '',
@@ -4413,6 +5487,20 @@
         let chatQueue = [];
         let agentStatus = true;
 
+        // Solutions Finder State
+        let finderState = {
+            currentStep: 1,
+            totalSteps: 4,
+            answers: {
+                goal: '',
+                budget: '',
+                timeline: ''
+            }
+        };
+
+        // Microsites Data
+        let microsites = JSON.parse(localStorage.getItem('fleekTechMicrosites')) || [];
+
         // Initialize particles.js
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
@@ -4453,12 +5541,14 @@
             // Initialize all components
             loadBlogPosts();
             loadConsultationClients();
+            loadMicrosites();
             updateDateTime();
             updateAnalytics();
             updatePriceEstimate();
             loadFreezerConfig();
             loadModelList();
             startRealTimeUpdates();
+            initializeSolutionsFinder();
             
             // Update date/time every second
             setInterval(updateDateTime, 1000);
@@ -4594,7 +5684,7 @@
         
         // Animate elements on scroll
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .stat-item, .team-member-card, .testimonial-slide, .blog-card');
+            const elements = document.querySelectorAll('.service-card, .stat-item, .team-member-card, .testimonial-slide, .blog-card, .microsite-card, .support-option');
             
             elements.forEach(element => {
                 const elementPosition = element.getBoundingClientRect().top;
@@ -4608,7 +5698,7 @@
         }
         
         // Set initial styles for animated elements
-        document.querySelectorAll('.service-card, .stat-item, .team-member-card, .testimonial-slide, .blog-card').forEach(item => {
+        document.querySelectorAll('.service-card, .stat-item, .team-member-card, .testimonial-slide, .blog-card, .microsite-card, .support-option').forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(30px)';
             item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -4786,6 +5876,8 @@
                     updateLiveChatStats();
                 } else if (tabId === 'freezer-config') {
                     loadFreezerConfig();
+                } else if (tabId === 'microsites-admin') {
+                    loadMicrositesAdmin();
                 }
             });
         });
@@ -5126,6 +6218,343 @@
             }
         }
 
+        // Solutions Finder Functionality
+        function initializeSolutionsFinder() {
+            // Step 1: Goal Selection
+            const step1Options = document.querySelectorAll('#step1 .finder-option');
+            const nextStep1Btn = document.getElementById('nextStep1');
+            
+            step1Options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    step1Options.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Store the selected value
+                    finderState.answers.goal = this.getAttribute('data-value');
+                    
+                    // Enable next button
+                    nextStep1Btn.disabled = false;
+                });
+            });
+            
+            nextStep1Btn.addEventListener('click', function() {
+                if (!finderState.answers.goal) return;
+                
+                // Update progress
+                updateFinderProgress(1);
+                
+                // Move to step 2
+                document.getElementById('step1').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+            });
+            
+            // Step 2: Budget Selection
+            const step2Options = document.querySelectorAll('#step2 .finder-option');
+            const prevStep2Btn = document.getElementById('prevStep2');
+            const nextStep2Btn = document.getElementById('nextStep2');
+            
+            step2Options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    step2Options.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Store the selected value
+                    finderState.answers.budget = this.getAttribute('data-value');
+                    
+                    // Enable next button
+                    nextStep2Btn.disabled = false;
+                });
+            });
+            
+            prevStep2Btn.addEventListener('click', function() {
+                // Update progress
+                updateFinderProgress(0);
+                
+                // Move back to step 1
+                document.getElementById('step2').classList.remove('active');
+                document.getElementById('step1').classList.add('active');
+            });
+            
+            nextStep2Btn.addEventListener('click', function() {
+                if (!finderState.answers.budget) return;
+                
+                // Update progress
+                updateFinderProgress(2);
+                
+                // Move to step 3
+                document.getElementById('step2').classList.remove('active');
+                document.getElementById('step3').classList.add('active');
+            });
+            
+            // Step 3: Timeline Selection
+            const step3Options = document.querySelectorAll('#step3 .finder-option');
+            const prevStep3Btn = document.getElementById('prevStep3');
+            const nextStep3Btn = document.getElementById('nextStep3');
+            
+            step3Options.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    step3Options.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Store the selected value
+                    finderState.answers.timeline = this.getAttribute('data-value');
+                    
+                    // Enable next button
+                    nextStep3Btn.disabled = false;
+                });
+            });
+            
+            prevStep3Btn.addEventListener('click', function() {
+                // Update progress
+                updateFinderProgress(1);
+                
+                // Move back to step 2
+                document.getElementById('step3').classList.remove('active');
+                document.getElementById('step2').classList.add('active');
+            });
+            
+            nextStep3Btn.addEventListener('click', function() {
+                if (!finderState.answers.timeline) return;
+                
+                // Update progress
+                updateFinderProgress(3);
+                
+                // Calculate and show recommendation
+                showRecommendation();
+                
+                // Move to step 4
+                document.getElementById('step3').classList.remove('active');
+                document.getElementById('step4').classList.add('active');
+            });
+            
+            // Restart Finder
+            document.getElementById('restartFinder').addEventListener('click', function() {
+                // Reset state
+                finderState = {
+                    currentStep: 1,
+                    totalSteps: 4,
+                    answers: {
+                        goal: '',
+                        budget: '',
+                        timeline: ''
+                    }
+                };
+                
+                // Reset UI
+                document.querySelectorAll('.finder-option').forEach(option => {
+                    option.classList.remove('selected');
+                });
+                
+                document.querySelectorAll('.finder-step').forEach(step => {
+                    step.classList.remove('active');
+                });
+                
+                document.getElementById('step1').classList.add('active');
+                
+                // Reset progress
+                updateFinderProgress(0);
+                
+                // Scroll to top of finder
+                document.getElementById('solutions-finder').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+        
+        function updateFinderProgress(step) {
+            const progress = (step / finderState.totalSteps) * 100;
+            document.getElementById('finderProgress').style.width = `${progress}%`;
+            finderState.currentStep = step;
+        }
+        
+        function showRecommendation() {
+            // Get recommendation based on answers
+            const recommendation = solutionsData[finderState.answers.goal] || solutionsData['online-presence'];
+            
+            // Update UI with recommendation
+            document.getElementById('recommendedService').textContent = recommendation.name;
+            document.getElementById('serviceDescription').textContent = recommendation.description;
+            document.getElementById('estimatedCost').textContent = recommendation.cost;
+            document.getElementById('estimatedTimeline').textContent = recommendation.timeline;
+            document.getElementById('complexity').textContent = recommendation.complexity;
+            document.getElementById('successRate').textContent = recommendation.successRate;
+            
+            // Update features list
+            const featuresList = document.getElementById('serviceFeatures').querySelector('ul');
+            featuresList.innerHTML = '';
+            recommendation.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            // Track finder usage in analytics
+            const finderUsage = JSON.parse(localStorage.getItem('finderUsage') || '[]');
+            finderUsage.push({
+                goal: finderState.answers.goal,
+                budget: finderState.answers.budget,
+                timeline: finderState.answers.timeline,
+                timestamp: new Date().toISOString()
+            });
+            localStorage.setItem('finderUsage', JSON.stringify(finderUsage));
+            
+            // Update analytics
+            updateAnalytics();
+        }
+
+        // Microsites Functionality
+        function loadMicrosites() {
+            // Load from localStorage or create default microsites
+            if (microsites.length === 0) {
+                microsites = [
+                    {
+                        id: 1,
+                        title: 'Zglobal Connect Portal',
+                        category: 'Technology',
+                        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                        url: 'https://zglobal.example.com',
+                        description: 'Specialized portal for internet service providers to manage router rentals and software solutions.'
+                    },
+                    {
+                        id: 2,
+                        title: 'TechLit Africa Platform',
+                        category: 'Education',
+                        image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                        url: 'https://techlit.example.com',
+                        description: 'Educational platform providing technology literacy resources across Africa.'
+                    },
+                    {
+                        id: 3,
+                        title: 'HealthPlus Mobile App',
+                        category: 'Healthcare',
+                        image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+                        url: 'https://healthplus.example.com',
+                        description: 'Healthcare management app for patients and medical professionals.'
+                    }
+                ];
+                localStorage.setItem('fleekTechMicrosites', JSON.stringify(microsites));
+            }
+            
+            // Display microsites
+            const micrositesGrid = document.getElementById('micrositesGrid');
+            micrositesGrid.innerHTML = '';
+            
+            microsites.forEach(microsite => {
+                const micrositeCard = document.createElement('div');
+                micrositeCard.className = 'microsite-card';
+                micrositeCard.innerHTML = `
+                    <div class="microsite-image">
+                        <img src="${microsite.image}" alt="${microsite.title}" loading="lazy">
+                    </div>
+                    <div class="microsite-content">
+                        <span class="microsite-category">${microsite.category}</span>
+                        <h3>${microsite.title}</h3>
+                        <p>${microsite.description}</p>
+                        <div class="microsite-actions">
+                            <a href="${microsite.url}" target="_blank" class="btn btn-primary" style="flex: 1;">
+                                <i class="fas fa-external-link-alt"></i> Visit Site
+                            </a>
+                        </div>
+                    </div>
+                `;
+                micrositesGrid.appendChild(micrositeCard);
+            });
+        }
+        
+        function loadMicrositesAdmin() {
+            const previewGrid = document.getElementById('micrositePreviewGrid');
+            previewGrid.innerHTML = '';
+            
+            microsites.forEach(microsite => {
+                const previewCard = document.createElement('div');
+                previewCard.className = 'microsite-preview-card';
+                previewCard.innerHTML = `
+                    <h4>${microsite.title}</h4>
+                    <div class="meta">${microsite.category} • <a href="${microsite.url}" target="_blank">${microsite.url}</a></div>
+                    <p>${microsite.description.substring(0, 100)}...</p>
+                    <div class="microsite-preview-actions">
+                        <button class="btn btn-secondary" onclick="editMicrosite(${microsite.id})">Edit</button>
+                        <button class="btn btn-primary" onclick="deleteMicrosite(${microsite.id})">Delete</button>
+                    </div>
+                `;
+                previewGrid.appendChild(previewCard);
+            });
+        }
+        
+        // Microsites admin form submission
+        document.getElementById('micrositesAdminForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('microsite-title').value;
+            const category = document.getElementById('microsite-category').value;
+            const image = document.getElementById('microsite-image').value || 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+            const url = document.getElementById('microsite-url').value;
+            const description = document.getElementById('microsite-description').value;
+            
+            const newMicrosite = {
+                id: Date.now(),
+                title,
+                category,
+                image,
+                url,
+                description,
+                date: new Date().toISOString()
+            };
+            
+            microsites.unshift(newMicrosite); // Add to beginning of array
+            localStorage.setItem('fleekTechMicrosites', JSON.stringify(microsites));
+            
+            // Reload microsites
+            loadMicrosites();
+            loadMicrositesAdmin();
+            
+            // Reset form
+            this.reset();
+            
+            // Update analytics
+            updateAnalytics();
+            
+            showNotification('Microsite added successfully!', 'success');
+        });
+        
+        function editMicrosite(id) {
+            const microsite = microsites.find(m => m.id === id);
+            
+            if (microsite) {
+                document.getElementById('microsite-title').value = microsite.title;
+                document.getElementById('microsite-category').value = microsite.category;
+                document.getElementById('microsite-image').value = microsite.image;
+                document.getElementById('microsite-url').value = microsite.url;
+                document.getElementById('microsite-description').value = microsite.description;
+                
+                // Scroll to form
+                document.querySelector('#microsites-admin-tab').scrollIntoView({ behavior: 'smooth' });
+                
+                showNotification(`Editing microsite: "${microsite.title}"`, 'info');
+            }
+        }
+        
+        function deleteMicrosite(id) {
+            if (confirm('Are you sure you want to delete this microsite?')) {
+                microsites = microsites.filter(microsite => microsite.id !== id);
+                localStorage.setItem('fleekTechMicrosites', JSON.stringify(microsites));
+                loadMicrosites();
+                loadMicrositesAdmin();
+                
+                // Update analytics
+                updateAnalytics();
+                
+                showNotification('Microsite deleted successfully!', 'success');
+            }
+        }
+
         // Consultation clients functionality
         function loadConsultationClients() {
             const clients = JSON.parse(localStorage.getItem('fleekTechConsultationClients')) || [];
@@ -5229,12 +6658,14 @@
             const visitors = localStorage.getItem('visitCount') || 0;
             const clients = JSON.parse(localStorage.getItem('fleekTechConsultationClients')) || [];
             const blogPosts = JSON.parse(localStorage.getItem('fleekTechBlogPosts')) || [];
+            const micrositesCount = microsites.length;
+            const finderUsage = JSON.parse(localStorage.getItem('finderUsage') || '[]').length;
             const activeChats = Array.from(activeChats.values()).length;
             
             document.getElementById('analyticsVisitors').textContent = visitors;
             document.getElementById('analyticsClients').textContent = clients.length;
             document.getElementById('analyticsBlogs').textContent = blogPosts.length;
-            document.getElementById('analyticsChats').textContent = activeChats;
+            document.getElementById('analyticsFinder').textContent = finderUsage;
             
             // Calculate additional metrics
             const conversionRate = clients.length > 0 ? Math.round((clients.length / visitors) * 100) : 0;
@@ -5881,6 +7312,56 @@
             if (hours < 24) return `${hours}h ago`;
             return `${days}d ago`;
         }
+
+        // FAQ Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Legal and Support Modal Handlers
+        document.querySelectorAll('.open-faq').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('faq-modal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        document.querySelectorAll('.open-legal').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = this.getAttribute('data-section');
+                document.getElementById('legal-modal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Scroll to specific section if specified
+                if (section) {
+                    setTimeout(() => {
+                        const element = document.getElementById(section);
+                        if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }, 100);
+                }
+            });
+        });
+
+        document.querySelectorAll('.open-docs').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.getElementById('docs-modal').style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Open Support Chat
+        document.getElementById('openSupportChat').addEventListener('click', function() {
+            chatbotWindow.classList.add('active');
+            chatWithHumanBtn.click();
+        });
 
         // Real-time updates
         function startRealTimeUpdates() {
