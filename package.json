@@ -4,7 +4,7 @@
   "description": "AI-powered technology services platform by Fleek Tech",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "db:generate": "prisma generate",
