@@ -108,7 +108,7 @@ OPENAI_API_KEY="your-openai-api-key"
 
 ## License
 
-© 2025 Fleek AI by Fleek Tech Inc. All Rights Reserved.
+© 2026 Fleek AI by Fleek Tech Inc. All Rights Reserved.
 
 ---
 

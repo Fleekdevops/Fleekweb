@@ -30,10 +30,10 @@ export default function Footer() {
               <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center">
                 <Bot className="w-7 h-7 text-white" />
               </div>
-              <span className="text-2xl font-black gradient-text">Fleek AI</span>
+              <span className="text-2xl font-black gradient-text">FleekTech AI Solutions</span>
             </Link>
             <p className="text-gray mb-6 leading-relaxed">
-              Engineering AI Excellence. 15+ Years of Full-Stack AI Mastery.
+              The Best AI Company in Africa. Located in Nairobi, Kenya. We have the finest team of AI experts, state-of-the-art research lab, and premium AI services to transform your business.
             </p>
             <div className="flex gap-3">
               {[Instagram, Twitter, Linkedin, Facebook].map((Icon, index) => (
@@ -101,7 +101,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-center md:text-left">
               <p className="text-gray text-sm">
-                © {new Date().getFullYear()} Fleek AI. All rights reserved.
+                © {new Date().getFullYear()} FleekTech AI Solutions. All rights reserved.
               </p>
             </div>
             <div className="flex items-center gap-6 text-sm">

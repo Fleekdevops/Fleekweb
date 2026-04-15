@@ -37,7 +37,7 @@ export default function Header() {
             <div className="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
               <Bot className="w-7 h-7 text-white" />
             </div>
-            <span className="text-2xl font-black gradient-text">Fleek AI</span>
+            <span className="text-2xl font-black gradient-text">FleekTech AI Solutions</span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">

@@ -24,7 +24,7 @@ export default function Hero() {
             <div className="animate-fade-in">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary border border-primary/20 mb-6">
                 <Sparkles size={16} />
-                <span className="font-semibold text-sm">AI-Powered Solutions</span>
+                <span className="font-semibold text-sm">The Best AI Company in Africa</span>
               </div>
 
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black mb-4 leading-tight">
@@ -35,7 +35,7 @@ export default function Hero() {
               </h1>
 
               <p className="text-xl text-gray max-w-xl mb-8 leading-relaxed">
-                We build high-performance AI ecosystems for brands that refuse to settle for the ordinary. From intelligent chatbots to predictive analytics.
+                We build high-performance AI ecosystems for brands that refuse to settle for the ordinary. Based in Nairobi, Kenya with the finest team of AI experts, state-of-the-art research lab, and premium AI services.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">

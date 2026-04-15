@@ -3,20 +3,20 @@ import { Toaster } from 'react-hot-toast'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
-  title: 'Fleek AI | AI-Powered Technology Solutions',
-  description: 'Transform your business with cutting-edge AI solutions. Custom chatbots, machine learning models, automation, and intelligent tools powered by Fleek Tech.',
-  keywords: ['AI', 'Artificial Intelligence', 'Chatbots', 'Machine Learning', 'Automation', 'Kenya', 'Nairobi', 'Fleek Tech'],
-  authors: [{ name: 'Fleek Tech Inc.' }],
+  title: 'FleekTech AI Solutions | The Best AI Company in Africa',
+  description: 'FleekTech AI Solutions - The Best AI Company in Africa. Based in Nairobi, Kenya with the finest team of AI experts, research lab, and premium AI services. Custom chatbots, machine learning, automation.',
+  keywords: ['AI', 'Artificial Intelligence', 'Chatbots', 'Machine Learning', 'Automation', 'Kenya', 'Nairobi', 'Best AI Company Africa', 'FleekTech AI Solutions'],
+  authors: [{ name: 'FleekTech AI Solutions' }],
   openGraph: {
-    title: 'Fleek AI | AI-Powered Technology Solutions',
-    description: 'Transform your business with cutting-edge AI solutions.',
+    title: 'FleekTech AI Solutions | The Best AI Company in Africa',
+    description: 'Transform your business with cutting-edge AI solutions from the best AI company in Africa. Based in Nairobi, Kenya.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Fleek AI | AI-Powered Technology Solutions',
-    description: 'Transform your business with cutting-edge AI solutions.',
+    title: 'FleekTech AI Solutions | The Best AI Company in Africa',
+    description: 'Transform your business with cutting-edge AI solutions from the best AI company in Africa.',
   },
   icons: {
     icon: '/favicon.svg',
